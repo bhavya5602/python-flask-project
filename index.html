@@ -1,0 +1,157 @@
++<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+</head>
+<body>
+
+    <h1>Hospital Management System</h1>
+    <nav>
+        <ul>
+            <li><a href="#appointments">1. Appointment Management</a></li>
+            <li><a href="#patients">2. Patient Management</a></li>
+            <li><a href="#facility">3. Facility Management</a></li>
+            <li><a href="#staff">4. Staff Management</a></li>
+            <li><a href="#supply">5. Supply Management</a></li>
+            <li><a href="#finance">6. Financial Management</a></li>
+            <li><a href="#insurance">7. Insurance Management</a></li>
+            <li><a href="#laboratory">8. Laboratory Management</a></li>
+            <li><a href="#reports">9. Report Management</a></li>
+            <li><a href="#vaccination">10. Vaccination Management</a></li>
+            <li><a href="#support">11. Support Management</a></li>
+        </ul>
+    </nav>
+
+    <!-- 1. Appointment Management -->
+    <section id="appointments">
+        <h2>1. Appointment Management</h2>
+        <form action="/add-appointment" method="POST">
+            <label>Patient Name: <input type="text" name="patient_name"></label><br>
+            <label>Doctor Specialty: 
+                <select name="doctor_specialty">
+                    <option>Cardiology</option>
+                    <option>Neurology</option>
+                    <option>General Medicine</option>
+                </select>
+            </label><br>
+            <label>Preferred Doctor: <input type="text" name="preferred_doctor"></label><br>
+            <label>Appointment Date: <input type="date" name="appointment_date"></label><br>
+            <label>Medical Documents: <input type="file" name="medical_docs"></label><br>
+            <button type="submit">Book Appointment</button>
+        </form>
+    </section>
+
+    <!-- 2. Patient Management -->
+    <section id="patients">
+        <h2>2. Patient Management</h2>
+        <form action="/add-patient" method="POST">
+            <label>Patient Name: <input type="text" name="patient_name"></label><br>
+            <label>Admission Type: 
+                <select name="admission_type">
+                    <option>OPD</option>
+                    <option>IPD</option>
+                </select>
+            </label><br>
+            <label>Previous History: <textarea name="medical_history"></textarea></label><br>
+            <label>Insurance Details: <input type="text" name="insurance_details"></label><br>
+            <button type="submit">Save Patient</button>
+        </form>
+    </section>
+
+    <!-- 3. Facility Management -->
+    <section id="facility">
+        <h2>3. Facility Management</h2>
+        <form action="/add-facility" method="POST">
+            <label>Check Bed Availability: 
+                <select name="bed_type">
+                    <option>General</option>
+                    <option>ICU</option>
+                    <option>Private Room</option>
+                </select>
+            </label><br>
+            <button type="submit">Check Availability</button>
+        </form>
+    </section>
+
+    <!-- 4. Staff Management -->
+    <section id="staff">
+        <h2>4. Staff Management</h2>
+        <form action="/add-staff" method="POST">
+            <label>Staff Name: <input type="text" name="staff_name"></label><br>
+            <label>Role: <input type="text" name="staff_role"></label><br>
+            <label>Department: <input type="text" name="staff_department"></label><br>
+            <label>Contact: <input type="tel" name="staff_contact"></label><br>
+            <button type="submit">Add Staff</button>
+        </form>
+    </section>
+
+    <!-- 5. Supply Management -->
+    <section id="supply">
+        <h2>5. Supply Management</h2>
+        <form action="/add-supply" method="POST">
+            <label>Item Name: <input type="text" name="supply_item"></label><br>
+            <label>Quantity: <input type="number" name="supply_quantity"></label><br>
+            <label>Supplier: <input type="text" name="supplier"></label><br>
+            <button type="submit">Update Stock</button>
+        </form>
+    </section>
+
+    <!-- 6. Financial Management -->
+    <section id="finance">
+        <h2>6. Financial Management</h2>
+        <form action="/add-finance" method="POST">
+            <label>Patient ID: <input type="text" name="patient_id"></label><br>
+            <label>Bill Amount: <input type="number" name="bill_amount"></label><br>
+            <button type="submit">Generate Bill</button>
+        </form>
+    </section>
+
+    <!-- 7. Insurance Management -->
+    <section id="insurance">
+        <h2>7. Insurance Management</h2>
+        <form action="/verify-insurance" method="POST">
+            <label>Patient ID: <input type="text" name="insurance_patient_id"></label><br>
+            <label>Insurance Company: <input type="text" name="insurance_company"></label><br>
+            <button type="submit">Verify Insurance</button>
+        </form>
+    </section>
+
+    <!-- 8. Laboratory Management -->
+    <section id="laboratory">
+        <h2>8. Laboratory Management</h2>
+        <form action="/add-lab" method="POST">
+            <label>Patient ID: <input type="text" name="lab_patient_id"></label><br>
+            <label>Test Type: <input type="text" name="test_type"></label><br>
+            <button type="submit">Submit Test</button>
+        </form>
+    </section>
+
+    <!-- 9. Report Management -->
+    <section id="reports">
+        <h2>9. Report Management</h2>
+        <form action="/generate-report" method="POST">
+            <label>Report Type: <input type="text" name="report_type"></label><br>
+            <button type="submit">Generate Report</button>
+        </form>
+    </section>
+
+    <!-- 10. Vaccination Management -->
+    <section id="vaccination">
+        <h2>10. Vaccination Management</h2>
+        <form action="/add-vaccination" method="POST">
+            <label>Patient ID: <input type="text" name="vaccine_patient_id"></label><br>
+            <label>Vaccine Type: <input type="text" name="vaccine_type"></label><br>
+            <button type="submit">Schedule Vaccination</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hospital Management System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
